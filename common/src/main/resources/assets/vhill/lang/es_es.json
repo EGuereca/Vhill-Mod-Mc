@@ -1,0 +1,27 @@
+{
+  "itemGroup.vhill.vhills": "Vhills",
+  "flavor.vhill.fresa": "Fresa (Regeneración)",
+  "flavor.vhill.menta": "Menta (Velocidad)",
+  "flavor.vhill.adrenalina": "Adrenalina (Fuerza)",
+
+  "item.vhill.vhill_fresa_3k": "Vhill Fresa (3k)",
+  "item.vhill.vhill_fresa_12k": "Vhill Fresa (12k)",
+  "item.vhill.vhill_fresa_32k": "Vhill Fresa (32k)",
+
+  "item.vhill.vhill_menta_3k": "Vhill Menta (3k)",
+  "item.vhill.vhill_menta_12k": "Vhill Menta (12k)",
+  "item.vhill.vhill_menta_32k": "Vhill Menta (32k)",
+
+  "item.vhill.vhill_adrenalina_3k": "Vhill Adrenalina (3k)",
+  "item.vhill.vhill_adrenalina_12k": "Vhill Adrenalina (12k)",
+  "item.vhill.vhill_adrenalina_32k": "Vhill Adrenalina (32k)",
+
+  "item.vhill.wax": "Wax (32k)",
+  "tooltip.vhill.wax_flavor": "Extracto Concentrado de Vhills",
+  "tooltip.vhill.wax_effects": "+ Regeneración, Fuerza, Velocidad, Náusea y Visión Nocturna",
+
+  "tooltip.vhill.flavor": "Sabor: %s",
+  "tooltip.vhill.category": "Categoría: %s",
+  "tooltip.vhill.uses_left": "Usos restantes: %d / %d",
+  "tooltip.vhill.exhausted": "¡AGOTADO! Peligro de veneno si se inhala"
+}

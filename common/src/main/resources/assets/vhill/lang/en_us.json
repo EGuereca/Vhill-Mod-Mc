@@ -1,0 +1,27 @@
+{
+  "itemGroup.vhill.vhills": "Vhills",
+  "flavor.vhill.fresa": "Strawberry (Regeneration)",
+  "flavor.vhill.menta": "Mint (Speed)",
+  "flavor.vhill.adrenalina": "Adrenaline (Strength)",
+
+  "item.vhill.vhill_fresa_3k": "Strawberry Vhill (3k)",
+  "item.vhill.vhill_fresa_12k": "Strawberry Vhill (12k)",
+  "item.vhill.vhill_fresa_32k": "Strawberry Vhill (32k)",
+
+  "item.vhill.vhill_menta_3k": "Mint Vhill (3k)",
+  "item.vhill.vhill_menta_12k": "Mint Vhill (12k)",
+  "item.vhill.vhill_menta_32k": "Mint Vhill (32k)",
+
+  "item.vhill.vhill_adrenalina_3k": "Adrenaline Vhill (3k)",
+  "item.vhill.vhill_adrenalina_12k": "Adrenaline Vhill (12k)",
+  "item.vhill.vhill_adrenalina_32k": "Adrenaline Vhill (32k)",
+
+  "item.vhill.wax": "Wax (32k)",
+  "tooltip.vhill.wax_flavor": "Concentrated Vhills Extract",
+  "tooltip.vhill.wax_effects": "+ Regeneration, Strength, Speed, Nausea and Night Vision",
+
+  "tooltip.vhill.flavor": "Flavor: %s",
+  "tooltip.vhill.category": "Category: %s",
+  "tooltip.vhill.uses_left": "Uses left: %d / %d",
+  "tooltip.vhill.exhausted": "EXHAUSTED! Poison hazard if inhaled"
+}

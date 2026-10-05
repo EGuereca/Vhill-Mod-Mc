@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "vhill:vhill_fresa_32k"
+    },
+    {
+      "item": "vhill:vhill_menta_32k"
+    },
+    {
+      "item": "vhill:vhill_adrenalina_32k"
+    }
+  ],
+  "result": {
+    "item": "vhill:wax",
+    "count": 1
+  }
+}

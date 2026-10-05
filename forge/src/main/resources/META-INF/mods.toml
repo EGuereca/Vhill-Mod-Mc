@@ -1,0 +1,34 @@
+modLoader = "javafml"
+loaderVersion = "[47,)"
+license = "MIT"
+
+[[mods]]
+modId = "vhill"
+version = "${version}"
+displayName = "Vhill"
+authors = "Enrique"
+description = '''
+Vhills con sabores y efectos de poción breves, con desgaste y trades para Minecraft 1.20.1
+'''
+logoFile = "assets/vhill/icon.png"
+
+[[dependencies.vhill]]
+modId = "forge"
+mandatory = true
+versionRange = "[47,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.vhill]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.20.1,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.vhill]]
+modId = "architectury"
+mandatory = true
+versionRange = "[9.2.14,)"
+ordering = "AFTER"
+side = "BOTH"
