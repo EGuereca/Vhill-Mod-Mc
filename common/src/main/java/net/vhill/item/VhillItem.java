@@ -48,12 +48,32 @@ public class VhillItem extends Item {
 
     @Override
     public int getUseDuration(ItemStack stack) {
-        return 25; // Aproximadamente 1.25 segundos de inhalación
+        return 25;
     }
 
     @Override
     public UseAnim getUseAnimation(ItemStack stack) {
-        return UseAnim.TOOT_HORN;
+        return UseAnim.NONE;
+    }
+
+    @Override
+    public void onUseTick(Level level, LivingEntity livingEntity, ItemStack stack, int remainingUseTicks) {
+        if (level.isClientSide && livingEntity instanceof Player) {
+            Player player = (Player) livingEntity;
+            if (player.isUsingItem() && player.getTicksUsingItem() == 1) {
+                level.playSound(
+                        player,
+                        player.getX(),
+                        player.getY(),
+                        player.getZ(),
+                        SoundEvents.SNIFFER_SNIFFING,
+                        SoundSource.PLAYERS,
+                        0.6F,
+                        1.2F
+                );
+            }
+        }
+        super.onUseTick(level, livingEntity, stack, remainingUseTicks);
     }
 
     @Override
@@ -63,20 +83,11 @@ public class VhillItem extends Item {
             int maxDamage = stack.getMaxDamage();
 
             if (currentDamage < maxDamage) {
-                // Desgaste manual: incrementa el daño en 1 sin romper el ítem
                 stack.setDamageValue(currentDamage + 1);
-                // Aplica los efectos activos correspondientes
                 applyActiveEffects(livingEntity);
             } else {
-                // Ítem agotado: aplica efecto de Veneno por 10 segundos (200 ticks)
                 livingEntity.addEffect(new MobEffectInstance(MobEffects.POISON, 200, 0));
             }
-        }
-
-        // Efectos audiovisuales de feedback para el jugador
-        if (livingEntity instanceof Player player) {
-            level.playSound(null, player.getX(), player.getY(), player.getZ(),
-                    SoundEvents.SNIFFER_SNIFFING, SoundSource.PLAYERS, 0.6F, 1.2F);
         }
 
         if (level.isClientSide) {
@@ -113,16 +124,34 @@ public class VhillItem extends Item {
         int remainingUses = maxDamage - currentDamage;
 
         if (flavor != null) {
-            tooltipComponents.add(Component.translatable("tooltip.vhill.flavor",
-                    Component.translatable("flavor.vhill." + flavor.getId())).withStyle(flavor.getFormatting()));
+            tooltipComponents.add(
+                    Component.translatable(
+                            "tooltip.vhill.flavor",
+                            Component.translatable("flavor.vhill." + flavor.getId())
+                    ).withStyle(flavor.getFormatting())
+            );
         }
 
-        tooltipComponents.add(Component.translatable("tooltip.vhill.category", category.getId()).withStyle(ChatFormatting.GRAY));
+        tooltipComponents.add(
+                Component.translatable(
+                        "tooltip.vhill.category",
+                        category.getId()
+                ).withStyle(ChatFormatting.GRAY)
+        );
 
         if (remainingUses > 0) {
-            tooltipComponents.add(Component.translatable("tooltip.vhill.uses_left", remainingUses, maxDamage).withStyle(ChatFormatting.GREEN));
+            tooltipComponents.add(
+                    Component.translatable(
+                            "tooltip.vhill.uses_left",
+                            remainingUses,
+                            maxDamage
+                    ).withStyle(ChatFormatting.GREEN)
+            );
         } else {
-            tooltipComponents.add(Component.translatable("tooltip.vhill.exhausted").withStyle(ChatFormatting.RED, ChatFormatting.BOLD));
+            tooltipComponents.add(
+                    Component.translatable("tooltip.vhill.exhausted")
+                            .withStyle(ChatFormatting.RED, ChatFormatting.BOLD)
+            );
         }
 
         super.appendHoverText(stack, level, tooltipComponents, isAdvanced);
